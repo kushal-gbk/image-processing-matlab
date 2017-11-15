@@ -1,3 +1,6 @@
+% Implementation of Rough set filter 
+
+close all;
 A = imread('test_main2.png');
 %A = imnoise(A1,'salt & pepper',0.02);
 %imshow('gray.png');
@@ -54,10 +57,8 @@ for ii=1:(size(A,1)-2)
                 new_image(ii,jj) = mean_of_nbrs;
             else
                 new_image(ii,jj) = A(ii,jj);
-            end
-            
-        end
-          
+            end 
+        end  
     end
 end
 
@@ -86,12 +87,4 @@ disp(peaksnr);
 
 %disp('Median Filter');
 %disp(peaksnr2);
-
-% Averaging FIlter
-J = imnoise(A,'salt & pepper',0.02);
-Kaverage = filter2(fspecial('average',3),J)/255;
-peaksnr3 = psnr(uint8(Kaverage),A);
-
-disp('Averaging Filter');
-disp(peaksnr3);
 

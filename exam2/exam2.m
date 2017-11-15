@@ -1,5 +1,10 @@
+% Exam 2
+% Display White Squares and Gray Squares separately
+% Display Different sized squares in separate figures
+
+
 close all;
-img = imread('test_image.jpg');
+img = imread('squares.jpg');
 imgb = imbinarize(img);
 
 %SE = strel('square',5);
